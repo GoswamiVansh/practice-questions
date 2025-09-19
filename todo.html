@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        width: 250px;
+        height: auto;
+        background-color: cornflowerblue;
+        padding: 20px;
+        margin: 0 auto;
+    }
+    button{
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <input type="text" name="" id="inpBox" placeholder="Enter your task">
+        <button id="addButton"> Add task</button>
+    </div>
+    <div class="taskContainer">
+    </div>
+</body>
+<script>
+    let taskContainer=document.querySelector(".taskContainer")
+    let inpbox=document.querySelector("#inpBox")
+    let addButton= document.querySelector ("#addButton")
+    let array = [
+        
+    ];
+
+    addButton.addEventListener ("click",function (){
+        const todo = {isdone: false, task: inpbox.value,}
+        array.push(todo)
+
+        inpbox.value=""
+
+        taskContainer.innerHTML = ""
+        for (let i = 0; i < array.length; i++) {
+            const aTodo = array[i];
+            taskContainer.innerHTML+=`<p>${aTodo.task} ${aTodo.isdone}</p>`
+        }
+
+        console.log(array)
+        // array[array.length-1].isdone=true
+        // console.log(array[array.length-1].task)   
+    })
+
+</script>
+</html>

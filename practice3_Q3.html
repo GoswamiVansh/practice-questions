@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        background-color: cornflowerblue;
+        border-radius: 20px;
+        padding: 50px;
+    }
+    .container input{
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgb(251, 233, 233);
+        font-size: medium;
+        color: cornflowerblue;
+        font-weight: bold;
+        /* display: flex; */
+        border: none;
+    }
+    button{
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    p{
+        background-color: cornflowerblue;
+        color: white;
+        font-weight: bolder;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 10px;
+
+    }
+</style>
+<body>
+    <div class="container">
+        <input type="text" name="name" id="name" placeholder="First Name">
+        <input type="text" name="name" id="lName" placeholder="Last Name">
+        <input type="text" name="name" id="country" placeholder="Country">
+        <input type="text" name="name" id="state" placeholder="State">
+        <input type="text" name="name" id="pincode" placeholder="Pincode">
+        <input type="text" name="name" id="education" placeholder="Higher Education">
+
+        <button id="submit">Submit</button>
+        <button id="show">show</button>
+        <button id="clear">Clear</button>
+    </div>
+    <div class="response">
+
+    </div>
+    <script>
+        const name = document.querySelector("#name")
+        const lName = document.querySelector("#lName")
+        const country = document.querySelector("#country")
+        const state = document.querySelector("#state")
+        const pincode = document.querySelector("#pincode")
+        const education = document.querySelector("#education")
+        const submit= document.querySelector("#submit")
+        const response = document.querySelector(".response")
+        const show = document.querySelector("#show")
+        const clear= document.querySelector("#clear")
+        array=[];
+
+        submit.addEventListener("click", function(){
+            
+            const info= { name:name.value, lastName:lName.value, country:country.value, state:state.value, pincode:pincode.value, education:education.value}
+            array.push(info)
+            // console.log(info)
+            // console.log(`I am ${name.value} ${lName.value} from ${country.value} ${state.value} Pincode:${pincode.value} I've complete my "${education.value} `)
+            // response.innerHTML= `<p> I am ${name.value} ${lName.value} from ${country.value} ${state.value} Pincode:${pincode.value} I've complete my ${education.value} </p>`
+            name.value=""
+            lName.value=""
+            country.value=""
+            state.value=""
+            pincode.value=""
+            education.value=""
+        })
+        show.addEventListener("click", function(){
+
+            response.innerHTML=""
+             for(i=0; i<array.length; i++){
+                const info = array[i]
+                console.log(info)
+
+        response.innerHTML+= `<p> I am ${info.name} ${info.lastName} from ${info.country} 
+        ${info.state} Pincode:${info.pincode} I've complete my ${info.education} </p>`
+            }
+        })
+        clear.addEventListener("click", function(){
+            response.innerHTML=""
+            array= [];
+        })
+    </script>
+</body>
+</html>

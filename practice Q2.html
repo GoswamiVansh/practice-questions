@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<style>
+    .container{
+        width: 200px;
+        height: 300px;
+        border: 3px;
+        margin: 0 auto;
+        background-color: cornflowerblue;
+    }
+    input{
+        /* width: 100px; */
+        padding: 8px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <input type="text" name="" id="taskContainer" placeholder="enter task" >
+    <button id="task">Add Task</button>
+    <div class="container">
+    </div>
+    <button id="showData">Add Task</button>
+    
+</body>
+<script>
+    let array = ["vansh", "Sahil", "priyanshu", "abhishek"];
+    let container = document.querySelector(".container")
+    let show = document.querySelector("#showData")
+    let taskContainer= document.querySelector("#taskContainer")
+    let addTask= document.querySelector("#task")
+    show.addEventListener("click",function(){
+        container.innerHTML=""
+        for(i=0; i<array.length; i++) {
+        let result= array [i];
+        container.innerHTML+=`<p>${result}</p>`
+        }
+        
+    }) 
+        addTask.addEventListener("click", function (){
+            array.push(taskContainer.value)
+            
+    })
+    
+
+
+   
+</script>
+</html>

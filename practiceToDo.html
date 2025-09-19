@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice-to-do</title>
+</head>
+<style>
+    .container{
+        /* display: flex; */
+        background-color: cornflowerblue;
+        border-radius: 20px;
+        width: 450px;
+        /* width: auto; */
+        margin: 0 auto;
+        margin-top: 20px;
+        min-height: 250px;
+        height: auto;
+        padding-top: 20px;
+    }
+    
+    input{
+        padding: 20px;
+        border-radius: 20px;
+        background-color: white;
+        /* color: white; */
+            text-decoration: none;
+        border: none;
+        color: rgb(208, 97, 208);
+        font-weight: bolder;
+        font-size: large;
+
+    }
+    input::placeholder{
+        color: rgb(208, 97, 208);
+        font-weight: bolder;
+        font-size: large;
+    }
+    .taskInput{
+        margin: 0 auto;
+        /* display: flex; */
+    }
+    .addTask button{
+        margin: 0 auto;
+        border-radius: 20px;
+        padding: 20px;
+        color: white;
+        background-color: rgb(175, 126, 220);
+        font-weight: bolder;
+        font-size: large;
+    }
+    .addTask button:hover{
+        background-color: blueviolet ;
+    }
+    .data{
+        display: flex;
+    }
+    .taskList p{
+        background-color: white;
+        border-radius: 20px;
+        margin: 0 auto;
+        padding: 10px;
+        margin: 5px;
+        width: 90%;
+        color: rgb(208, 97, 208);
+        font-weight: bolder;
+        font-size: large;
+    }
+</style>
+<body>
+        <div class="container">
+            <div class="data">
+            <div class="taskInput">
+                <input type="text" name="task" id="taskInput" placeholder="List your task">
+             </div>
+            <div class="addTask">
+                <button id="addTask">Add Task</button>
+            </div>
+            </div>
+            
+        <div class="taskList">
+
+        </div>
+        </div>
+</body>
+    <script>
+        const taskInput = document.querySelector("#taskInput")
+        const addTask = document.querySelector("#addTask")
+        const taskList= document.querySelector(".taskList")
+        const array = [];
+
+        addTask.addEventListener("click", function(){
+            if (taskInput.value === ("")) {
+                alert ("Enter Your Task!");
+                
+            }
+            else{
+
+                array.push(taskInput.value)   
+                taskList.innerHTML+=`<p>${taskInput.value}</P>`
+                    console.log(array)
+                    taskInput.value= ""
+                }
+            
+        })
+        
+
+        
+        
+        
+        
+
+    </script>
+</html>
