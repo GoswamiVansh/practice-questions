@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<style>
+    *{
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    body{
+        background-color:#4585CE ;
+    }
+    .container{
+        display: flex;
+        margin-top: 7%;
+        padding: 20px;
+        
+    }
+    .toDo{
+        background-color: white;
+        border-radius: 20px;
+        width: 42%;
+        margin: 0 auto ;  
+        /* display: flex; */
+        min-height:400px ;
+        height: auto;
+        /* margin-left: 40%; */
+        /* margin-top: 7% */
+    }
+    #taskInput  {
+        padding: 20px;
+        width: 60%;
+        margin: 0 auto;
+        margin: 50px 0px 0px 40px;
+        border-radius: 40px;
+        background-color: rgb(79, 181, 255);
+        /* text-decoration: none; */
+        border: none;
+
+    }
+    .header{
+        /* background-color: rgb(79, 181, 255); */
+        background-color: rgb(47, 165, 238);
+        width: 100%;
+        height: 15%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        color: white;
+        text-align: end;
+        /* margin-top: 10px; */
+        
+    }
+    .header button{
+        padding: 21px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        /* background-color: rgb(255, 137, 3); */
+        background-color: white;
+        color: red;
+        font-weight: bolder;        
+    }
+    .header button:hover{
+        font-size: medium;
+    }
+    #taskInput::placeholder{
+        color: white;
+        font-weight: bolder;
+        font-style: initial;
+    }
+    #addTask{
+        padding: 20px;
+        border-radius: 20px;
+        margin: 15px;
+        background-color: rgb(105, 212, 98);
+        color: white;
+        font-size: small;
+        font-weight: bolder;
+    }
+    .leftContent{
+        color: white;
+        /* padding: 100px 0px 0px 100px; */
+        /* margin-top: 7%; */
+        width: 50%;
+        text-align: center;
+    }
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        font-display: fallback;
+        line-height: 50px;
+        text-decoration: dotted;
+    }
+    p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="leftContent">
+            <h1>TODO App </h1>
+            <p>Organize Your Task</p>
+            <img src="data/image.png " width="100%" alt="">
+
+        </div>
+            <!-- <div class="banner">
+                <img src="data/todo banner.png" alt="Banner" width="100%" height="500px">
+            </div> -->
+        <div class="toDo">
+            <div class="header">
+                 <!-- <button> <img src="data/trash-light-full.svg" alt=""></button> -->
+                <button><i class="fa-solid fa-trash"> </i> Delete</button>
+
+              </div>
+            <input type="text" name="" id="taskInput" placeholder="Enter your task">
+            <button id="addTask">Add task</button>
+    
+        </div>
+    </div>
+</body>
+</html>
