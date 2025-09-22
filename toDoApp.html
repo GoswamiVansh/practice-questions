@@ -36,7 +36,7 @@
         width: 42%;
         margin: 0 auto;
         /* display: flex; */
-        min-height: 400px;
+        /* min-height: 400px; */
         height: auto;
         /* margin-left: 40%; */
         /* margin-top: 7% */
@@ -180,17 +180,17 @@ li{
         <div class="toDo">
             <div class="header">
                 <!-- <button> <img src="data/trash-light-full.svg" alt=""></button> -->
-                <button><i class="fa-solid fa-trash"> </i> Clear All</button>
+                <button id="clearB"><i class="fa-solid fa-trash"> </i> Clear All</button>
             </div>
             <div class="inputSide">
                 <input type="text" name="" id="taskInput" placeholder="Enter your task">
                 <button id="addTask">Add task</button>
             </div>
-            <div class="taskList">
+            <div class="taskList" id="taskList">
                 <!-- <h2> Go to gym </h2>
                 <h2>Go to gym</h2> -->
                 <!-- <ul class="list"> -->
-                <div class="listItem">
+                <!-- <div class="listItem">
                     <li > <input type="checkbox" style="accent-color: green;"> Go to gym <button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
                 </div>
                 <div class="listItem">
@@ -201,12 +201,7 @@ li{
                 </div>
                 <div class="listItem">
                     <li > <input type="checkbox" style="accent-color: green;"> Go to gym <button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
-                </div>
-                <div class="listItem">
-                    <li > <input type="checkbox" style="accent-color: green;"> Go to gym <button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
-                </div>
-
-
+                </div> -->
                 <!-- </ul> -->
             </div>
         </div>
@@ -214,4 +209,46 @@ li{
     </div>
 </body>
 
+<script>
+    const taskInput = document.querySelector("#taskInput")
+    const addTask = document.querySelector("#addTask")
+    const listItem= document.querySelector(".listItem")
+    const clearB= document.querySelector("#clearB")
+    const taskList=document.querySelector("#taskList")
+    const dltTask= document.querySelector("#dltTask")
+    const checkBox=document.querySelector("#checkBox")
+    array=[];
+
+
+    addTask.addEventListener("click", function(){
+        if (taskInput.value==="") {
+            alert("Please Enter your task");
+            
+        } else{
+            array.push(taskInput.value)
+            taskList.innerHTML+=`<div class="listItem">
+                <li  > <input type="checkbox" id ="checkBox" style="accent-color: green;">${taskInput.value}<button id="dltTask"><i class="fa-solid fa-xmark"></i></i></button></li>
+                </div>`
+                console.log(array);
+                taskInput.value=""
+            }
+            localStorage.setItem('taskList.value', JSON.stringify(taskList));
+        })
+    clearB.addEventListener("click", function(){
+        if (clearB===1) {
+            alert("This action cannot be undone")                 
+        }
+        else{
+        taskList.innerHTML=""
+        }
+    })
+
+    // dltTask.addEventListener("click", function(){
+        
+    // })
+    
+
+   
+</script>
 </html>
+
