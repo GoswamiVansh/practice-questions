@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="buttonContainer">    </div>
+    <div class="list"></div>
+    
+</body>
+    <script>
+        // const B= document.querySelector(".buttonContainer")
+        // // const array = [1,2,3,4,5,6,7,8,9,10];
+        // const button= document.createElement("button")
+        // const bText= document.createTextNode("click me")
+        // button.append(btext)
+        // B.append(button)
+        // console.log(B)
+
+
+        // // for (let i = 0; i < array.length; i++) {
+        // //     const element = array[i];
+        // // }
+
+        let array=[1,2,3,4,5,6,7,8,9,10];
+        const buttonContainer= document.querySelector(".buttonContainer")
+        const list= document.querySelector(".list")
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+    
+            // const buttonP=document.createElement("p")
+            // buttonContainer.append("buttonP")
+            const buttonB= document.createElement("button")
+            const buttonText=document.createTextNode(`click me ${element}`)
+            buttonB.append(buttonText)
+            buttonContainer.append(buttonB)
+            
+
+            buttonB.addEventListener("click", function(){
+                console.log(`You click on index ${element}`)
+                const p=document.createElement("p")
+                const text= document.createTextNode(`You click on index ${element}`)
+                p.append(text)
+                list.append(p)
+                
+            })      
+
+            
+        }
+    </script>   
+</html>
