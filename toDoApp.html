@@ -100,12 +100,16 @@
     #addTask {
         padding: 20px;
         border-radius: 20px;
+        border: none;
         margin: 15px;
         /* background-color: rgb(105, 212, 98); */
         background-color: #44c48a;
         color: white;
         font-size: small;
         font-weight: bolder;
+    }
+    #addTask:hover{
+        font-size: medium;
     }
 
     .leftContent {
@@ -152,13 +156,12 @@ li{
 #dltTask {
     /* background: rgb(134, 134, 211); */
     background-color: rgb(79, 181, 255);
-
     border: none;
-    padding-left: 160px;
     color: white;
     font-size: medium;
-}
 
+    /* padding-left: 70%   ; */
+}
 #dltTask:hover{
     color: red;
 }
@@ -234,15 +237,7 @@ li{
             }
             localStorage.setItem('taskList.value', JSON.stringify(taskList));
         })
-    clearB.addEventListener("click", function(){
-        if (clearB===1) {
-            alert("This action cannot be undone")                 
-        }
-        else{
-        taskList.innerHTML=""
-        }
-    })
-
+    
     // dltTask.addEventListener("click", function(){
         
     // })
