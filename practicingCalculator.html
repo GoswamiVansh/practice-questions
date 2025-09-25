@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        background-color: cornflowerblue;
+        margin: 0 auto;
+        max-width:500px;
+        height: 200px;
+        border-radius: 20px;
+        margin-top: 50px;
+    }
+    button , button2, button3, button4{
+        padding: 10px;
+        background-color:orange;
+        border: none;
+        margin: 10px;
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+    input{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+        
+    }
+    .result{
+        background-color: rgb(27, 196, 50);
+        margin: 0 auto;
+        border-radius: 10px;
+        width: auto;
+        font-weight: bolder;
+        font-size: larger;
+        color: white;
+        /* padding: 10px;  
+         */
+         margin: 10px;  
+    }
+</style>
+<body>
+    <div class="container">
+        
+    </div>
+    <div class="result">
+
+    </div>
+    <script>
+        const container = document.querySelector(".container")
+        const result = document.querySelector(".result")
+           
+        
+        // div 1 created for num1
+        const div =document.createElement("div")
+        const inp= document.createElement("input")
+        // inp.type=Number
+        div.append(inp)
+        container.append(div)
+        inp.placeholder="Num 1"
+
+        // div 2 for num 2
+        const div2 =document.createElement("div")
+        const inp2= document.createElement("input");
+        div.append(inp2)
+        container.append(div2)
+        inp2.placeholder="Num 2"
+
+        // button for submitions
+
+        const button = document.createElement("button")
+        const bText = document.createTextNode("ADD")
+        button.append(bText)
+        container.append(button)
+
+        const button2 = document.createElement("button")
+        const bText2 = document.createTextNode("Sub")
+        button2.append(bText2)
+        container.append(button2)
+
+        const button3 = document.createElement("button")
+        const bText3 = document.createTextNode("Multiply")
+        button3.append(bText3)
+        container.append(button3)
+
+        const button4 = document.createElement("button")
+        const bText4 = document.createTextNode("Divide")
+        button4.append(bText4)
+        container.append(button4)
+
+        // controls of Button
+
+        function showValue(res) {
+            const rContainer= document.createElement("p")
+            const text =document.createTextNode("Your Result is: " +res)
+            rContainer.append(text)
+            result.replaceChildren(rContainer)
+
+        }
+        button.addEventListener("click", function(add){
+            
+            showValue(parseInt(inp.value)+parseInt(inp2.value))
+           
+            // console.log(parseInt(inp.value)+parseInt(inp2.value))
+
+        })
+
+        button2.addEventListener("click", function(add){
+            // inp.document.querySelector("inp")
+            // inp2.document.querySelector("inp2")
+            showValue(parseInt(inp.value)-parseInt(inp2.value))
+
+        })
+        button3.addEventListener("click", function(add){
+            // inp.document.querySelector("inp")
+            // inp2.document.querySelector("inp2")
+           showValue(parseInt(inp.value)*parseInt(inp2.value))
+
+        })
+        button4.addEventListener("click", function(add){
+            // inp.document.querySelector("inp")
+            // inp2.document.querySelector("inp2")
+            showValue(parseInt(inp.value)/parseInt(inp2.value))
+
+        })
+    </script>
+</body>
+</html>
